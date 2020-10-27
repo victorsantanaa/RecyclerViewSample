@@ -18,14 +18,11 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements UserAdapter.SelectedUser {
 
+    final CatalogoNome catalogoNome = new CatalogoNome();
     Toolbar toolbar;
     RecyclerView recyclerView;
 
     List<UserModel> userModelList = new ArrayList<>();
-
-    String[] names = {"Richard", "Alice", "Ana", "Hannah", "David", "Victor", "Santana", "Carolina", "Beatriz", "Erick",
-    "Felipe", "Gabriella", "Daiana", "Leandro", "Marcelo", "Maria", "Eduarda",
-    "Andreza", "Denizau", "José", "Socorro"};
 
     UserAdapter userAdapter;
 
@@ -43,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements UserAdapter.Selec
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
-        for(String s:names){
+        for(String s: catalogoNome.names){
             UserModel userModel = new UserModel(s);
 
             userModelList.add(userModel);
