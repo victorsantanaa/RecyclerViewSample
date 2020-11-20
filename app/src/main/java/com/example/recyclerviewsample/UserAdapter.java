@@ -43,9 +43,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserAdapterVH>
 
         String username = userModel.getUserName();
         String prefix = userModel.getUserName().substring(0,1);
+        String tpi = userModel.getTpi();
 
         holder.tvUserName.setText(username);
         holder.tvPrefix.setText(prefix);
+        holder.tvTpi.setText(tpi);
     }
 
     @Override
@@ -100,12 +102,15 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserAdapterVH>
         TextView tvPrefix;
         TextView tvUserName;
         ImageView imIcon;
+        TextView tvTpi;
 
         public UserAdapterVH(@NonNull View itemView) {
             super(itemView);
             tvPrefix = itemView.findViewById(R.id.prefix);
             tvUserName = itemView.findViewById(R.id.username);
             imIcon = itemView.findViewById(R.id.imageView);
+            tvTpi = itemView.findViewById(R.id.tpi);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

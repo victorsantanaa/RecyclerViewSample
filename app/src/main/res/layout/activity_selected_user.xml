@@ -30,15 +30,70 @@
             />
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/selectedUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Selected User"
-        android:textColor="@color/headerColor"
-        android:textSize="16sp"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+
+        <TextView
+            android:padding="30dp"
+            android:id="@+id/selectedUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selected User"
+            android:textColor="@color/headerColor"
+            android:textSize="26sp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="70dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/selectedSigla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/headerColor"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="sigla"
+            app:layout_constraintBottom_toTopOf="@+id/selectedUser"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/selectedTPI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/headerColor"
+            android:padding="10dp"
+            android:textSize="16sp"
+            android:text="tpi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selectedUser" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginLeft="36dp"
+            android:text="T-P-I"
+            android:textColor="@color/headerColor"
+            android:padding="10dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/selectedTPI"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>

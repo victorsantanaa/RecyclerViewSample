@@ -11,6 +11,8 @@ import android.widget.TextView;
 public class SelectedUserActivity extends AppCompatActivity {
 
     TextView tvUser;
+    TextView tvTpi;
+    TextView tvSigla;
     ImageView backButton;
 
     @Override
@@ -19,6 +21,8 @@ public class SelectedUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_selected_user);
 
         tvUser  = findViewById(R.id.selectedUser);
+        tvTpi = findViewById(R.id.selectedTPI);
+        tvSigla = findViewById(R.id.selectedSigla);
         backButton = findViewById(R.id.backbutton);
 
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -34,6 +38,8 @@ public class SelectedUserActivity extends AppCompatActivity {
             UserModel userModel = (UserModel) intent.getSerializableExtra("data" );
 
             tvUser.setText(userModel.getUserName());
+            tvTpi.setText(userModel.getTpi());
+            tvSigla.setText(userModel.getSigla());
         }
 
     }

@@ -19,6 +19,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements UserAdapter.SelectedUser {
 
     final CatalogoNome catalogoNome = new CatalogoNome();
+    final CatalogoTPI catalogoTPI = new CatalogoTPI();
+    final CatalogoSigla catalogoSigla = new CatalogoSigla();
+
     Toolbar toolbar;
     RecyclerView recyclerView;
 
@@ -40,8 +43,8 @@ public class MainActivity extends AppCompatActivity implements UserAdapter.Selec
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
-        for(String s: catalogoNome.names){
-            UserModel userModel = new UserModel(s);
+        for(int i=0; i < catalogoNome.names.length; i++){
+            UserModel userModel = new UserModel(catalogoNome.names[i], catalogoTPI.tpi[i],catalogoSigla.sigla[i]);
 
             userModelList.add(userModel);
         }
